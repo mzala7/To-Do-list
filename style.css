@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensures full-page height */
+    padding: 20px;
+    overflow-y: auto; /* Allows scrolling if too many tasks */
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    min-height: 200px; /* Allows it to grow dynamically */
+    max-width: 100%;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.input-container {
+    display: flex;
+    width: 100%;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    border: none;
+}
+
+button:first-of-type {
+    border-radius: 0 5px 5px 0;
+}
+
+.task-buttons button {
+    border-radius: 5px;
+    min-width: 30px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8f9fa;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+.task-text {
+    flex-grow: 1;
+    overflow-wrap: break-word;
+    padding-right: 10px;
+    word-break: break-word;
+}
+
+.completed .task-text {
+    opacity: 0.5;
+}
+
+.task-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+/* Fixes issue of tasks getting cut off and ensures smooth scrolling */
+.container {
+    min-height: 250px;
+    overflow: visible;
+    max-height: none;
+}
+
+/* Keeps the HR uniform and properly placed */
+hr {
+    border: none;
+    height: 3px;
+    background-color: #444;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.floating-compliment {
+    position: absolute;
+    background-color: rgba(117, 108, 108, 0.797); /* Dark background */
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1000;
+}
